@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ToolButton.gd" type="Script" id=1]
+[ext_resource path="res://Images/Logo (3).png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 1023, 596, 1021, 468, 1024, 318, 1022, 114, 1027, -3, 587, -8, 172, -6, -3, -5, -1, 156, 1, 343, -3, 595, 237, 597, 561, 596, 818, 597 )
+
+[node name="PLAY" type="ToolButton" parent="."]
+margin_left = 372.0
+margin_top = 220.0
+margin_right = 642.0
+margin_bottom = 296.0
+rect_pivot_offset = Vector2( 5, 0 )
+text = "PLAY"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CREDITS" type="ToolButton" parent="."]
+margin_left = 372.0
+margin_top = 320.0
+margin_right = 642.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 5, 0 )
+text = "CREDITS"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolButton3" type="ToolButton" parent="."]
+margin_left = 372.0
+margin_top = 420.0
+margin_right = 642.0
+margin_bottom = 496.0
+rect_pivot_offset = Vector2( 5, 0 )
+text = "SETTINGS"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 502, 120 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="PLAY" to="PLAY" method="_on_ToolButton_pressed"]
+[connection signal="pressed" from="CREDITS" to="CREDITS" method="_on_ToolButton_pressed"]
+[connection signal="pressed" from="ToolButton3" to="ToolButton3" method="_on_ToolButton_pressed"]

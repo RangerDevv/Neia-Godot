@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/BACK (1).png" type="Texture" id=1]
+[ext_resource path="res://back_script.gd" type="Script" id=2]
+[ext_resource path="res://GithubRepo.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 132, 84 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( -132, -84 )
+polygon = PoolVector2Array( -35, -12, -34.3269, 41.5966, -27, 625, 1071, 617, 1058, -18 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 401.0
+margin_top = 115.0
+margin_right = 648.0
+margin_bottom = 382.0
+theme = SubResource( 1 )
+tab_size = 8
+text = "Programmer: Rangerdevv
+Artwork: Rangerdevv
+Engine: Godot
+Inspiration: Saikuda --(Avidcoder123)
+game type: Text based rpg
+Open Sourced: Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 735.0
+margin_top = 291.0
+margin_right = 982.0
+margin_bottom = 417.0
+theme = SubResource( 1 )
+tab_size = 8
+text = "Made with <3 by rangerdevv"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolButton" type="ToolButton" parent="."]
+margin_right = 12.0
+margin_bottom = 22.0
+icon = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkButton" type="LinkButton" parent="."]
+margin_left = 402.0
+margin_top = 205.0
+margin_right = 653.0
+margin_bottom = 271.0
+text = "Click here to contribute to the game!"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ToolButton" to="ToolButton" method="_on_ToolButton_pressed"]
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_LinkButton_pressed"]
