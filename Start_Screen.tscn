@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://ToolButton.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ToolButton.gd" type="Script" id=1]
 [ext_resource path="res://Images/Logo (3).png" type="Texture" id=2]
+[ext_resource path="res://Music/airtone_-_precarity_10.mp3" type="AudioStream" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,22 +34,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolButton3" type="ToolButton" parent="."]
-margin_left = 372.0
-margin_top = 420.0
-margin_right = 642.0
-margin_bottom = 496.0
-rect_pivot_offset = Vector2( 5, 0 )
-text = "SETTINGS"
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Logo" type="Sprite" parent="."]
 position = Vector2( 502, 120 )
 texture = ExtResource( 2 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
 [connection signal="pressed" from="PLAY" to="PLAY" method="_on_ToolButton_pressed"]
 [connection signal="pressed" from="CREDITS" to="CREDITS" method="_on_ToolButton_pressed"]
-[connection signal="pressed" from="ToolButton3" to="ToolButton3" method="_on_ToolButton_pressed"]
