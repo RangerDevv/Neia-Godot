@@ -1,4 +1,5 @@
-extends ToolButton
+extends MenuButton
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -13,8 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_ToolButton_pressed():
-	get_tree().change_scene_to(load('res://Main.tscn'))
-	pass # Replace with function body.

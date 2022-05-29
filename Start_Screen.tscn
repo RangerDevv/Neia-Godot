@@ -10,6 +10,15 @@
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 1023, 596, 1021, 468, 1024, 318, 1022, 114, 1027, -3, 587, -8, 172, -6, -3, -5, -1, 156, 1, 343, -3, 595, 237, 597, 561, 596, 818, 597 )
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
+margin_left = 57.0
+margin_top = 283.0
+margin_right = 368.0
+margin_bottom = 348.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PLAY" type="ToolButton" parent="."]
 margin_left = 372.0
 margin_top = 220.0
