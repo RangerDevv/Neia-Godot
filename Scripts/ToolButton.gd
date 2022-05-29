@@ -15,6 +15,5 @@ func _ready():
 #	pass
 
 
-func _on_ToolButton_pressed():
-	get_tree().change_scene_to(load('res://Main.tscn'))
+
 	pass # Replace with function body.

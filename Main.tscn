@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/RichTextLabel.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,14 +23,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuButton" type="MenuButton" parent="."]
-margin_left = 34.0
-margin_top = 29.0
-margin_right = 165.0
-margin_bottom = 70.0
-text = "Menu"
-items = [ "Settings", null, 0, false, false, 0, 0, null, "", false, "Main Menu", null, 0, false, false, 1, 0, null, "", false, "Quit", null, 0, false, false, 2, 0, null, "", false ]
+[node name="MainMenu" type="ToolButton" parent="."]
+margin_right = 150.0
+margin_bottom = 34.0
+text = "Main Menu"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Settings" type="Polygon2D" parent="MainMenu"]
+visible = false
+position = Vector2( -14, -13 )
+color = Color( 0.121569, 0.121569, 0.121569, 1 )
+polygon = PoolVector2Array( 217, 73, 213, 427, 814, 441, 815, 64 )
+
+[connection signal="button_down" from="MainMenu" to="MainMenu" method="_on_MainMenu_button_down"]
