@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/ToolButton.gd" type="Script" id=1]
 [ext_resource path="res://Images/Logo (3).png" type="Texture" id=2]
 [ext_resource path="res://Music/airtone_-_precarity_10.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/CREDITS.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,7 +30,7 @@ margin_right = 642.0
 margin_bottom = 396.0
 rect_pivot_offset = Vector2( 5, 0 )
 text = "CREDITS"
-script = ExtResource( 1 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,4 +44,6 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [connection signal="pressed" from="PLAY" to="PLAY" method="_on_ToolButton_pressed"]
+[connection signal="pressed" from="PLAY" to="PLAY" method="_on_PLAY_pressed"]
 [connection signal="pressed" from="CREDITS" to="CREDITS" method="_on_ToolButton_pressed"]
+[connection signal="pressed" from="CREDITS" to="CREDITS" method="_on_CREDITS_pressed"]
