@@ -1,9 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Images/Grass.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
 [ext_resource path="res://Music/airtone_-_precarity_10.mp3" type="AudioStream" id=3]
-[ext_resource path="res://Scripts/Volume.gd" type="Script" id=4]
 [ext_resource path="res://Images/Start_Map.png" type="Texture" id=5]
 [ext_resource path="res://Images/Path.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Tree1.tscn" type="PackedScene" id=7]
@@ -11,53 +9,13 @@
 [ext_resource path="res://Assets/Tree2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Rock.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Start_House.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StartMap" type="Sprite" parent="."]
 position = Vector2( 512, 301 )
 texture = ExtResource( 5 )
-
-[node name="MainMenu" type="ToolButton" parent="."]
-margin_right = 150.0
-margin_bottom = 34.0
-text = "Main Menu"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Settings" type="Polygon2D" parent="MainMenu"]
-visible = false
-position = Vector2( -14, -13 )
-color = Color( 0.466667, 0.466667, 0.466667, 1 )
-polygon = PoolVector2Array( 217, 73, 213, 427, 814, 441, 815, 64 )
-
-[node name="HSlider" type="HSlider" parent="MainMenu/Settings"]
-modulate = Color( 0.890196, 0.890196, 0.890196, 1 )
-margin_left = 414.0
-margin_top = 115.0
-margin_right = 656.0
-margin_bottom = 190.0
-max_value = 1.0
-step = 0.05
-tick_count = 10
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/Settings"]
-margin_left = 369.0
-margin_top = 110.0
-margin_right = 708.0
-margin_bottom = 136.0
-bbcode_enabled = true
-bbcode_text = "[center]VOLUME[/center]"
-text = "VOLUME"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
@@ -104,7 +62,7 @@ position = Vector2( 908, 60 )
 position = Vector2( 321, -341 )
 
 [node name="Rock5" parent="." instance=ExtResource( 10 )]
-position = Vector2( 88, 7 )
+position = Vector2( 88, 17 )
 
 [node name="Rock6" parent="." instance=ExtResource( 10 )]
 position = Vector2( 864, -199 )
@@ -116,7 +74,7 @@ scale = Vector2( 1, 0.759039 )
 texture = ExtResource( 6 )
 
 [node name="House1" parent="." instance=ExtResource( 11 )]
-position = Vector2( 695, -468 )
+position = Vector2( 722, -480 )
 
-[connection signal="button_down" from="MainMenu" to="MainMenu" method="_on_MainMenu_button_down"]
-[connection signal="value_changed" from="MainMenu/Settings/HSlider" to="MainMenu/Settings/HSlider" method="_on_HSlider_value_changed"]
+[node name="Node2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 495, 292 )
